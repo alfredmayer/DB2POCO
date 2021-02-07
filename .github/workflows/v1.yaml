@@ -16,10 +16,10 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
         
       - name: Build app 🚀
-        run:  msbuild WindowsFormsApplication1\WindowsFormsApplication1.csproj /p:Configuration=Release /p:DeployOnBuild=true
+        run:  msbuild DB2POCO.csproj /p:Configuration=Release /p:DeployOnBuild=true
 
       - name: upload 
         uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: .\WindowsFormsApplication1\bin\Release
+          name: Dist
+          path: .\bin\Release
