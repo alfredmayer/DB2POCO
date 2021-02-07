@@ -18,6 +18,10 @@ jobs:
       - name: Build app 🚀
         run:  msbuild DB2POCO.csproj /p:Configuration=Release /p:DeployOnBuild=true
 
+
+      - name: startTest 
+        run:  .\bin\Release\DB2POCO.exe test
+
       - name: upload 
         uses: actions/upload-artifact@v2
         with:
