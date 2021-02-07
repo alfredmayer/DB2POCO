@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DB2POCO.Services;
+using System;
 using System.Windows.Forms;
 
 namespace DB2POCO
@@ -15,12 +13,13 @@ namespace DB2POCO
         static void Main(string[] args)
         {
             if (args.Length == 1 && "test" == args[0]) {
+                new ConfigService();
                 Application.Exit();
                 return;
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1( new ConfigService()));
         }
     }
 }
